@@ -39,7 +39,7 @@ function Header() {
           }}
         >
           Experience
-        </h1>{" "}
+        </h1>
       </Col>
       <Col xs={{ span: 6 }} sm={{ span: 3 }}>
         <h1

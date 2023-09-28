@@ -20,8 +20,8 @@ function HomePage() {
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to{" "}
-          <a href="https://github.com/ShanerCoder">
-            Shane's Portfolio Page!{""}
+          <a className="linkLabel" href="https://github.com/ShanerCoder">
+            Shane's Portfolio Page!{" "}
             <span className={styles.logo}>
               <Image
                 src="/GitHub.png"
@@ -51,7 +51,7 @@ function HomePage() {
           <div
             className={styles.card}
             onClick={() => {
-              handleLoader("/projects");
+              handleLoader("/experience");
             }}
           >
             <h2>Experience&rarr;</h2>

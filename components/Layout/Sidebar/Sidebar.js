@@ -1,4 +1,3 @@
-import { useState } from "react";
 import classes from "./Sidebar.module.css";
 
 function SideBar({ props }) {
@@ -18,7 +17,7 @@ function SideBar({ props }) {
             transform: props.open ? "rotate(0deg)" : "rotate(180deg)",
           }}
         />
-        {props.children}
+        <div style={{ textAlign: "center" }}>{props.children}</div>
       </div>
     </div>
   );
