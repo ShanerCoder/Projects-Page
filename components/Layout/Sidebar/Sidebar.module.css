@@ -1,0 +1,18 @@
+/* Regular CSS */
+.sidebar {
+  height: 100vh; /* Equivalent to h-screen in Tailwind */
+  background-color: rgba(128, 128, 128, 0.5); /* Equivalent to bg-dark-purple in Tailwind */
+  position: relative; /* Equivalent to relative in Tailwind */
+  transition: all 0.5s ease-in-out;
+}
+
+.control {
+  position: absolute;
+  cursor: pointer;
+  right: -1.25rem; /* Equivalent to right-3 in Tailwind */
+  top: 2.25rem; /* Equivalent to top-9 in Tailwind */
+  width: 2.75rem; /* Equivalent to w-7 in Tailwind */
+  border: 0.125rem solid darkpurple; /* Equivalent to border-2 border-dark-purple in Tailwind */
+  border-radius: 9999px; /* Equivalent to rounded-full in Tailwind */
+  transition: all 0.5s ease-in-out;
+}

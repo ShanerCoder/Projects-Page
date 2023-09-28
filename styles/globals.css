@@ -15,12 +15,25 @@ a {
   box-sizing: border-box;
 }
 
+a, .linkLabel {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+a:hover, .linkLabel:hover {
+  color: #e33f3f;
+}
+
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
   body {
-    color: white;
+    color: #D42B99;
     background: black;
   }
 }
