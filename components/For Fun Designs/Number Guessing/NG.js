@@ -22,7 +22,7 @@ function NumberGuessing() {
 
   return (
     <>
-      <div style={{ textAlign: "center", marginBottom: "2%" }}>
+      <div className={classes.mainDiv}>
         <h1>Number Guessing</h1>
         <h3>
           You may enter two numbers within a range, and a number will randomly
