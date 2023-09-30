@@ -1,13 +1,24 @@
 import classes from "./NG.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NumberRange from "./NumberRange";
 import NumberGuess from "./NumberGuess";
+import { Transition } from "semantic-ui-react";
 
 function NumberGuessing() {
   const numberOfGuesses = 5;
+  const transitionTime = 400;
   const [lowerRange, setLowerRange] = useState(0);
   const [upperRange, setUpperRange] = useState(0);
   const [answer, setAnswer] = useState("");
+  const [transition, setTransition] = useState(false);
+
+  function handleUpdateOfAnswer(answer) {
+    setTransition(true);
+    setTimeout(() => {
+      setAnswer(answer);
+      setTransition(false);
+    }, transitionTime);
+  }
 
   return (
     <>
@@ -22,26 +33,32 @@ function NumberGuessing() {
           aiming for the highest range!
         </h4>
       </div>
-      <div className={classes.inputFormDiv}>
-        {answer == "" && (
-          <NumberRange
-            lowerRange={lowerRange}
-            setLowerRange={setLowerRange}
-            upperRange={upperRange}
-            setUpperRange={setUpperRange}
-            setAnswer={setAnswer}
-          />
-        )}
-        {answer != "" && (
-          <NumberGuess
-            lowerRange={lowerRange}
-            upperRange={upperRange}
-            numberOfGuesses={numberOfGuesses}
-            answer={answer}
-            setAnswer={setAnswer}
-          />
-        )}
-      </div>
+      <Transition
+        animation="scale"
+        duration={transitionTime}
+        visible={!transition}
+      >
+        <div className={classes.inputFormDiv}>
+          {answer == "" && (
+            <NumberRange
+              lowerRange={lowerRange}
+              setLowerRange={setLowerRange}
+              upperRange={upperRange}
+              setUpperRange={setUpperRange}
+              setAnswer={handleUpdateOfAnswer}
+            />
+          )}
+          {answer != "" && (
+            <NumberGuess
+              lowerRange={lowerRange}
+              upperRange={upperRange}
+              numberOfGuesses={numberOfGuesses}
+              answer={answer}
+              setAnswer={handleUpdateOfAnswer}
+            />
+          )}
+        </div>
+      </Transition>
     </>
   );
 }

@@ -74,7 +74,7 @@ function NumberGuess(props) {
           Range between {props.lowerRange} & {props.upperRange}
         </h3>
         {generatePreviousAttempts()}
-        <h3>Attempts left: {props.attempts}</h3>
+        <h3>Attempts left: {attempts}</h3>
         {gameFinished && <h3>Correct answer was: {props.answer}</h3>}
         <form
           onSubmit={!gameFinished ? validateNumber : (e) => e.preventDefault()}
