@@ -5,7 +5,7 @@ function SideBar({ props }) {
     <div className="flex">
       <div
         className={classes.sidebar}
-        style={{ width: props.open ? "25rem" : "5rem" }}
+        style={{ width: props.open ? "30rem" : "6rem" }}
       >
         <img
           src="/control.png"

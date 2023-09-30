@@ -1,0 +1,56 @@
+.card {
+  border: 1px solid grey;
+  border-radius: .5rem;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+
+.formGroup > label {
+  font-size: 2rem;
+  color: #333;
+}
+
+.stepTitle {
+  margin: 0;
+  margin-bottom: 1rem;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.buttonRow {
+  margin: 0 auto;
+  padding-top: 1.25rem;
+}
+
+.button {
+  margin-top: 2%;
+  width: 100%;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 1rem;
+    min-width: 300px;
+  }
+
+  .stepTitle {
+    font-size: 2rem;
+  }
+
+  .formGroup > label {
+    font-size: 1.5rem;
+  }
+}
