@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "../../styles/Home.module.css";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import Card from "../Display/Card/Card";
 
 function HomePage() {
   const router = useRouter();
@@ -38,35 +39,20 @@ function HomePage() {
         </p>
 
         <div className={styles.grid}>
-          <div
-            className={styles.card}
-            onClick={() => {
-              handleLoader("/projects");
-            }}
-          >
+          <Card onClick={() => handleLoader("/projects")}>
             <h2>Projects&rarr;</h2>
             <p>A list of projects I have worked on in the past</p>
-          </div>
+          </Card>
 
-          <div
-            className={styles.card}
-            onClick={() => {
-              handleLoader("/experience");
-            }}
-          >
+          <Card onClick={() => handleLoader("/experience")}>
             <h2>Experience&rarr;</h2>
             <p>A rundown of my professional experience</p>
-          </div>
+          </Card>
 
-          <div
-            className={styles.card}
-            onClick={() => {
-              handleLoader("/other");
-            }}
-          >
+          <Card onClick={() => handleLoader("/other")}>
             <h2>Other&rarr;</h2>
             <p>A list of for-fun projects created on this website</p>
-          </div>
+          </Card>
         </div>
       </main>
     </div>
