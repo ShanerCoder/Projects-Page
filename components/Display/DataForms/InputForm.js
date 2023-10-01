@@ -1,4 +1,3 @@
-import { Button } from "semantic-ui-react";
 import classes from "./InputForm.module.css";
 
 const InputForm = ({
@@ -10,7 +9,7 @@ const InputForm = ({
   children,
 }) => {
   return (
-    <div className={classes.card} data-step="1">
+    <div className={classes.formBorder} data-step="1">
       <h3 className={classes.stepTitle}>{title}</h3>
       {children}
       <div className={classes.buttonRow}>
