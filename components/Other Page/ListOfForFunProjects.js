@@ -1,4 +1,4 @@
-import ListButton from "../Display/Buttons/ListButton";
+import ListButton from "../Display/ListButton";
 import classes from "./ListOfForFunProjects.module.css";
 
 function ListOfForFunProjects(props) {
