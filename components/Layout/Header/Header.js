@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import styles from "../../styles/Home.module.css";
+import classes from "./Header.module.css";
 import { Row, Col } from "react-bootstrap";
 
 function Header() {
@@ -10,7 +10,7 @@ function Header() {
   }
 
   return (
-    <Row className={styles.header}>
+    <Row className={classes.header}>
       <Col xs={{ span: 6 }} sm={{ span: 3 }}>
         <h1
           className="linkLabel"
@@ -29,7 +29,7 @@ function Header() {
           }}
         >
           Projects
-        </h1>{" "}
+        </h1>
       </Col>
       <Col xs={{ span: 6 }} sm={{ span: 3 }}>
         <h1

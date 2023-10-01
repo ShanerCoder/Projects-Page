@@ -1,0 +1,6 @@
+
+.header {
+  padding-top: 1rem;
+  text-align: center;
+  --bs-gutter-x: 0;
+}

@@ -1,16 +1,16 @@
 import Image from "next/image";
-import styles from "../../styles/Home.module.css";
+import classes from "./Footer.module.css";
 
 function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer className={classes.footer}>
       <a
         href="https://github.com/ShanerCoder"
         target="_blank"
         rel="noopener noreferrer"
       >
         GitHub
-        <span className={styles.logo}>
+        <span className={classes.logo}>
           <Image src="/GitHub.png" alt="GitHub Logo" width={16} height={16} />
         </span>
       </a>

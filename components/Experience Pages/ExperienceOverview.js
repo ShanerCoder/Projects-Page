@@ -1,15 +1,16 @@
-import styles from "../../styles/Home.module.css";
+import Card from "../Display/Card/Card";
+import classes from "./ExperienceOverview.module.css";
 
 function ExperienceOverview() {
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <h1 className={styles.title}>A list of my professional experience:</h1>
-        <div className={styles.grid}>
-          <a className={styles.card}>
+    <div className={classes.container}>
+      <main className={classes.main}>
+        <h1 className={classes.title}>A list of my professional experience:</h1>
+        <div className={classes.grid}>
+          <Card>
             <h2>Kainos &darr;</h2>
             <p>2018 - Present</p>
-          </a>
+          </Card>
         </div>
       </main>
     </div>
