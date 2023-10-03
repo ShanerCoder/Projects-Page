@@ -4,7 +4,8 @@ import InputForm from "../../Display/DataForms/InputForm";
 import { useState } from "react";
 import { Transition } from "semantic-ui-react";
 
-function CreateWord(props) {
+function EncodeWord(props) {
+  const maxLength = 50;
   const transitionTime = 400;
   const [transition, setTransition] = useState(false);
   const [wordCreated, setWordCreated] = useState("");
@@ -31,16 +32,17 @@ function CreateWord(props) {
         return false;
       }
     }
+    const containsNonAlphabetic = /[^a-zA-Z\s]/.test(wordCreated);
+    if (containsNonAlphabetic) {
+      setErrorMessage("Word cannot contain special characters!");
+      return false;
+    }
     setErrorMessage("");
     handleEncode(encodeString(wordCreated));
   }
 
   function encodeString(string) {
     return btoa(string);
-  }
-
-  function decodeString(string) {
-    return atob(string);
   }
 
   function returnToOptions(e) {
@@ -79,6 +81,7 @@ function CreateWord(props) {
                     <input
                       type="text"
                       placeholder="Enter a word"
+                      maxLength={maxLength}
                       value={wordCreated}
                       onChange={(e) => setWordCreated(e.target.value)}
                     />
@@ -128,4 +131,4 @@ function CreateWord(props) {
   );
 }
 
-export default CreateWord;
+export default EncodeWord;

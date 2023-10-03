@@ -3,6 +3,11 @@
   margin-top: 2%;
   margin-bottom: 2%;
 }
+
+.button {
+  width: 90%;
+}
+
 .textInput {
   text-align: center;
   margin-top: 5%;
@@ -25,7 +30,14 @@
 
 .errorMessage {
   color: red;
-  font-size: 1rem;
+  font-size: 2rem;
+  margin-top: 2%;
+  margin-bottom: 0;
+}
+
+.successMessage {
+  color: limegreen;
+  font-size: 2rem;
   margin-top: 2%;
   margin-bottom: 0;
 }
