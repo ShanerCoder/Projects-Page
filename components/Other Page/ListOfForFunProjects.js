@@ -19,7 +19,12 @@ function ListOfForFunProjects(props) {
       description: "Guess a number",
       ref: "NG",
     },
-    { expanded_title: "WIP", title: "WIP", description: "WIP", ref: "N/A" },
+    {
+      expanded_title: "Hangman",
+      title: "HM",
+      description: "Game you all know and love!",
+      ref: "HM",
+    },
     { expanded_title: "WIP", title: "WIP", description: "WIP", ref: "N/A2" },
     { expanded_title: "WIP", title: "WIP", description: "WIP", ref: "N/A3" },
   ];
