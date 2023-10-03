@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import classes from "./OtherPage.module.css";
 import SideBar from "../Layout/Sidebar/Sidebar";
+import styles from "../../styles/Home.module.css";
 import { Row, Col } from "react-bootstrap";
 import ListOfForFunProjects from "./ListOfForFunProjects";
 import Information from "../For Fun Designs/Information/Information";
