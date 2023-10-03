@@ -3,12 +3,11 @@ import classes from "./Hangman.module.css";
 import HangmanOptions from "./HangmanOptions";
 import { Transition } from "semantic-ui-react";
 import CreateWord from "./CreateWord";
+import GuessWord from "./GuessWord";
 
 function Hangman() {
   const transitionTime = 400;
   const [transition, setTransition] = useState(false);
-  const [lives, setLives] = useState(6);
-  const [wordToGuess, setWordToGuess] = useState("");
   const [view, setView] = useState("options");
 
   function handleUpdateOfView(view) {
@@ -30,7 +29,9 @@ function Hangman() {
         <div className={classes.inputFormDiv}>
           {view == "options" && <HangmanOptions setView={handleUpdateOfView} />}
           {view == "createWord" && <CreateWord setView={handleUpdateOfView} />}
-          {wordToGuess != "guessWord" && <></>}
+          {view == "guessWord" && (
+            <GuessWord wordToGuess={"Log"} setView={handleUpdateOfView} />
+          )}
         </div>
       </Transition>
     </div>
