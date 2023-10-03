@@ -3,7 +3,7 @@
   margin-top: 2%;
   margin-bottom: 2%;
 }
-.numberInput {
+.textInput {
   text-align: center;
   margin-top: 5%;
 }
@@ -14,7 +14,7 @@
   text-align: center;
 }
 
-.numberInput input {
+.textInput input {
   width: 80%;
   height: 50px;
   font-size: 2rem;
@@ -28,6 +28,11 @@
   font-size: 1rem;
   margin-top: 2%;
   margin-bottom: 0;
+}
+
+.copyToClipboard {
+  margin-top: 2%;
+  width: 80%;
 }
 
 @media (max-width: 800px) {
