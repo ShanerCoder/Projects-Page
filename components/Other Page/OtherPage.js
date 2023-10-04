@@ -7,6 +7,7 @@ import Information from "../For Fun Designs/Information/Information";
 import ProjectClicker from "../For Fun Designs/Project Clicker/PC";
 import NumberGuessing from "../For Fun Designs/Number Guessing/NG";
 import { Transition } from "semantic-ui-react";
+import Hangman from "../For Fun Designs/Hangman/Hangman";
 
 export default function OtherPage() {
   const transitionTime = 400;
@@ -66,6 +67,7 @@ export default function OtherPage() {
               {selectedProject == null && <Information />}
               {selectedProject == "PC" && <ProjectClicker />}
               {selectedProject == "NG" && <NumberGuessing />}
+              {selectedProject == "HM" && <Hangman />}
             </div>
           </Transition>
         </Col>

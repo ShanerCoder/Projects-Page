@@ -1,0 +1,59 @@
+.mainDiv {
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.button {
+  width: 90%;
+}
+
+.textInput {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.inputFormDiv {
+  width: 50%;
+  margin-left: 25%;
+  text-align: center;
+}
+
+.textInput input {
+  width: 80%;
+  height: 50px;
+  font-size: 2rem;
+  border: 1px solid grey;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 2rem;
+  margin-top: 2%;
+  margin-bottom: 0;
+}
+
+.successMessage {
+  color: limegreen;
+  font-size: 2rem;
+  margin-top: 2%;
+  margin-bottom: 0;
+}
+
+.copyToClipboard {
+  margin-top: 2%;
+  width: 80%;
+}
+
+@media (max-width: 800px) {
+  .inputFormDiv {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .button {
+    margin-top: 5%;
+  }
+}
