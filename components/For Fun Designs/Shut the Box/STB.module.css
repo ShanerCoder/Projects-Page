@@ -82,7 +82,7 @@
 .rollDiceButton,
 .closeBoxesButton {
   width: 80%;
-  font-size: 40px;
+  font-size: 2rem;
   margin-top: 2%;
 }
 
@@ -93,7 +93,7 @@
 }
 
 .diceRollText {
-  font-size: 40px;
+  font-size: 2rem;
 }
 
 @media (max-width: 800px) {
