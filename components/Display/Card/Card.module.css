@@ -1,4 +1,5 @@
-.card {
+.card,
+.inactiveCard {
   margin: 1rem;
   padding: 1.5rem;
   text-align: center;
@@ -12,10 +13,22 @@
 
 .card:hover,
 .card:focus,
-.card:active {
+.card:active,
+.inactiveCard:hover,
+.inactiveCard:focus {
   color: #e33f3f;
   border-color: #e33f3f;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
   cursor: pointer;
+}
+
+.inactiveCard:hover,
+.inactiveCard:focus {
+  cursor: default;
 }
 
 .card h2 {
