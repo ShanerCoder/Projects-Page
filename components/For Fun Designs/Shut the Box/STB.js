@@ -19,10 +19,11 @@ function ShutTheBox() {
         `You still have ${totalToClose} in value to close!`
       );
     }
+    const boxesRemaining = openBoxes.length - selectedBoxes.length;
     setOpenBoxes((prevBoxes) =>
       prevBoxes.filter((num) => !selectedBoxes.includes(num))
     );
-    if (openBoxes.length == 0) {
+    if (boxesRemaining == 0) {
       setSuccessMessage("You win!");
     }
     resetDiceRolls();
@@ -104,17 +105,21 @@ function ShutTheBox() {
           })}
         </div>
 
-        <p className={classes.diceRollText}>
-          Dice Roll:{" "}
-          {firstDiceRoll && secondDiceRoll
-            ? `${firstDiceRoll} - ${secondDiceRoll}`
-            : "? - ?"}
-        </p>
-        <p className={classes.diceRollText}>
-          Total left to close: {totalToClose >= 0 ? totalToClose : "?"}
-        </p>
-
-        {errorMessage && <p className={classes.errorMessage}>{errorMessage}</p>}
+        {successMessage ? (
+          <p className={classes.successMessage}>{successMessage}</p>
+        ) : (
+          <>
+            <p className={classes.diceRollText}>
+              Dice Roll:{" "}
+              {firstDiceRoll && secondDiceRoll
+                ? `${firstDiceRoll} - ${secondDiceRoll}`
+                : "? - ?"}
+            </p>
+            <p className={classes.diceRollText}>
+              Total left to close: {totalToClose >= 0 ? totalToClose : "?"}
+            </p>
+          </>
+        )}
 
         <button
           className={classes.rollDiceButton}
