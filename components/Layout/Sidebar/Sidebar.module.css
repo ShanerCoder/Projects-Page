@@ -1,19 +1,29 @@
-/* Regular CSS */
 .sidebar {
-  height: 100vh; /* Equivalent to h-screen in Tailwind */
-  border: 1px solid #202020;
-  position: relative; /* Equivalent to relative in Tailwind */
+  height: 90vh;
+  border: 2px solid #dfdfdf;
+  position: relative;
   transition: all 0.5s ease-in-out;
-  bottom: 1px;
+  bottom: 2px;
 }
 
 .control {
   position: absolute;
   cursor: pointer;
-  right: -1.25rem; /* Equivalent to right-3 in Tailwind */
-  top: 2.25rem; /* Equivalent to top-9 in Tailwind */
-  width: 2.75rem; /* Equivalent to w-7 in Tailwind */
-  border: 0.125rem solid darkpurple; /* Equivalent to border-2 border-dark-purple in Tailwind */
-  border-radius: 9999px; /* Equivalent to rounded-full in Tailwind */
+  right: -1.25rem;
+  top: 2.25rem;
+  width: 2.75rem;
+  border-radius: 9999px;
   transition: all 0.5s ease-in-out;
+}
+
+@media (prefers-color-scheme: dark) {
+  .sidebar {
+    border: 1px solid #202020;
+  }
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    background-color: #dfdfdf;
+  }
 }

@@ -1,8 +1,11 @@
 import classes from "./STB.module.css";
 import { useState } from "react";
 import Card from "../../Display/Card/Card";
+import Image from "next/image";
 
 function ShutTheBox() {
+  const diceRollTimeInMS = 500;
+  const diceImageChangeTimeInMS = 100;
   const [firstDiceRoll, setFirstDiceRoll] = useState();
   const [secondDiceRoll, setSecondDiceRoll] = useState();
   const [errorMessage, setErrorMessage] = useState();
@@ -51,16 +54,41 @@ function ShutTheBox() {
   function rollDice() {
     const min = 1;
     const max = 6;
-    const rollOne = Math.floor(Math.random() * (max - min + 1)) + min;
-    const rollTwo = Math.floor(Math.random() * (max - min + 1)) + min;
-    setFirstDiceRoll(rollOne);
-    if (openBoxes.length == 1 && openBoxes.includes(1)) {
-      setTotalToClose(rollOne);
-      setSecondDiceRoll("N/A");
+
+    const rollDiceWithDelay = (setDiceRollCallback) => {
+      let intervalCount = 0;
+      const intervalId = setInterval(() => {
+        const randomRoll = Math.floor(Math.random() * (max - min + 1)) + min;
+        setDiceRollCallback(randomRoll);
+        intervalCount++;
+        if (intervalCount >= diceRollTimeInMS / diceImageChangeTimeInMS) {
+          clearInterval(intervalId);
+        }
+      }, diceImageChangeTimeInMS);
+    };
+
+    rollDiceWithDelay(setFirstDiceRoll);
+
+    if (openBoxes.length === 1 && openBoxes.includes(1)) {
+      setTimeout(() => {
+        const finalRoll = Math.floor(Math.random() * (max - min + 1)) + min;
+        setFirstDiceRoll(finalRoll);
+        setTotalToClose(finalRoll);
+        setSecondDiceRoll("N/A");
+      }, diceRollTimeInMS);
       return;
     }
-    setSecondDiceRoll(rollTwo);
-    setTotalToClose(rollOne + rollTwo);
+
+    rollDiceWithDelay(setSecondDiceRoll);
+
+    setTimeout(() => {
+      const finalRollOne = Math.floor(Math.random() * (max - min + 1)) + min;
+      const finalRollTwo = Math.floor(Math.random() * (max - min + 1)) + min;
+
+      setFirstDiceRoll(finalRollOne);
+      setSecondDiceRoll(finalRollTwo);
+      setTotalToClose(finalRollOne + finalRollTwo);
+    }, diceRollTimeInMS);
   }
 
   function restartGame() {
@@ -81,67 +109,108 @@ function ShutTheBox() {
     setTotalToClose();
   }
 
-  return (
-    <>
-      <div className={classes.mainDiv}>
-        <h1>
-          Shut the Box{!isNaN(highscore) && ` - High Score: ${highscore}`}
-        </h1>
-        <div className={classes.boxContainer}>
-          {cards.map((num) => {
-            const isOpen = openBoxes.includes(num);
-            const isSelected = selectedBoxes.includes(num);
-            return (
-              <div
-                key={num}
-                className={`${classes.box} ${
-                  isOpen ? classes.openBox : classes.closedBox
-                } ${isSelected ? classes.selectedBox : ""}`}
-                onClick={() => isOpen && selectBox(num)} // Allow selection only if the box is open
-              >
-                {isOpen && <Card>{num}</Card>}
-              </div>
-            );
-          })}
-        </div>
+  function renderDice() {
+    const diceImages = [
+      "/dice/unknown.png", // index 0, used as default
+      "/dice/1.png",
+      "/dice/2.png",
+      "/dice/3.png",
+      "/dice/4.png",
+      "/dice/5.png",
+      "/dice/6.png",
+    ];
 
-        {successMessage ? (
-          <p className={classes.successMessage}>{successMessage}</p>
-        ) : (
-          <>
-            <p className={classes.diceRollText}>
-              Dice Roll:{" "}
-              {firstDiceRoll && secondDiceRoll
-                ? `${firstDiceRoll} - ${secondDiceRoll}`
-                : "? - ?"}
-            </p>
-            <p className={classes.diceRollText}>
-              Total left to close: {totalToClose >= 0 ? totalToClose : "?"}
-            </p>
-          </>
-        )}
+    const diceOneUrl = diceImages[firstDiceRoll] || diceImages[0];
+    const diceTwoUrl =
+      secondDiceRoll === "N/A"
+        ? null
+        : diceImages[secondDiceRoll] || diceImages[0];
 
-        <button
-          className={classes.rollDiceButton}
-          onClick={rollDice}
-          disabled={(firstDiceRoll && secondDiceRoll) || successMessage}
-        >
-          Roll Dice
-        </button>
+    const diceOneRender = (
+      <Image
+        src={diceOneUrl}
+        alt="Dice One"
+        width={500}
+        height={300}
+        className={classes.diceImage}
+      />
+    );
 
-        <button
-          className={classes.closeBoxesButton}
-          onClick={closeBoxes}
-          disabled={selectedBoxes.length === 0}
-        >
-          Close Selected Boxes
-        </button>
+    if (!diceTwoUrl) return diceOneRender;
 
-        <button className={classes.closeBoxesButton} onClick={restartGame}>
-          Restart Game
-        </button>
+    const diceTwoRender = (
+      <Image
+        src={diceTwoUrl}
+        alt="Dice Two"
+        width={500}
+        height={300}
+        className={classes.diceImage}
+      />
+    );
+
+    return (
+      <div className={classes.diceRender}>
+        {diceOneRender}
+        {diceTwoRender}
       </div>
-    </>
+    );
+  }
+
+  return (
+    <div className={classes.mainDiv}>
+      <h1>Shut the Box{!isNaN(highscore) && ` - High Score: ${highscore}`}</h1>
+      <div className={classes.boxContainer}>
+        {cards.map((num) => {
+          const isOpen = openBoxes.includes(num);
+          const isSelected = selectedBoxes.includes(num);
+          return (
+            <div
+              key={num}
+              className={`${classes.box} ${
+                isOpen ? classes.openBox : classes.closedBox
+              } ${isSelected ? classes.selectedBox : ""}`}
+              onClick={() => isOpen && selectBox(num)} // Allow selection only if the box is open
+            >
+              {isOpen && <Card>{num}</Card>}
+            </div>
+          );
+        })}
+      </div>
+
+      {successMessage ? (
+        <p className={classes.successMessage}>{successMessage}</p>
+      ) : (
+        <>
+          {renderDice()}
+          <p className={classes.diceRollText}>
+            Total left to close: {totalToClose >= 0 ? totalToClose : "?"}
+          </p>
+          {errorMessage && (
+            <p className={classes.errorMessage}>{errorMessage}</p>
+          )}
+        </>
+      )}
+
+      <button
+        className={classes.rollDiceButton}
+        onClick={rollDice}
+        disabled={(firstDiceRoll && secondDiceRoll) || successMessage}
+      >
+        Roll Dice
+      </button>
+
+      <button
+        className={classes.closeBoxesButton}
+        onClick={closeBoxes}
+        disabled={selectedBoxes.length === 0}
+      >
+        Close Selected Boxes
+      </button>
+
+      <button className={classes.closeBoxesButton} onClick={restartGame}>
+        Restart Game
+      </button>
+    </div>
   );
 }
 
