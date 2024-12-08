@@ -25,7 +25,7 @@ function ListOfForFunProjects(props) {
       description: "Game you all know and love!",
       ref: "HM",
     },
-    { expanded_title: "WIP", title: "WIP", description: "WIP", ref: "N/A2" },
+    { expanded_title: "Shut the Box", title: "STB", description: "Roll the dice and shut the box!", ref: "STB" },
     { expanded_title: "WIP", title: "WIP", description: "WIP", ref: "N/A3" },
   ];
   return (
