@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import styles from "../../styles/Home.module.css";
+import styles from "./Header.module.css";
 import { Row, Col } from "react-bootstrap";
 
 function Header() {
@@ -11,44 +11,34 @@ function Header() {
 
   return (
     <Row className={styles.header}>
-      <Col xs={{ span: 6 }} sm={{ span: 3 }}>
+      <Col xs={{ span: 4 }} sm={{ span: 4 }}>
         <h1
           className="linkLabel"
           onClick={() => {
             handleLoader("/");
           }}
         >
-          Home
+          <span className={"logoColor"}>F</span>ood List
         </h1>
       </Col>
-      <Col xs={{ span: 6 }} sm={{ span: 3 }}>
+      <Col xs={{ span: 4 }} sm={{ span: 4 }}>
         <h1
           className="linkLabel"
           onClick={() => {
-            handleLoader("/projects");
+            handleLoader("/backstory");
           }}
         >
-          Projects
+          <span className={"logoColor"}>T</span>he Backstory
         </h1>{" "}
       </Col>
-      <Col xs={{ span: 6 }} sm={{ span: 3 }}>
+      <Col xs={{ span: 4 }} sm={{ span: 4 }}>
         <h1
           className="linkLabel"
           onClick={() => {
-            handleLoader("/experience");
+            handleLoader("/funZone");
           }}
         >
-          Experience
-        </h1>
-      </Col>
-      <Col xs={{ span: 6 }} sm={{ span: 3 }}>
-        <h1
-          className="linkLabel"
-          onClick={() => {
-            handleLoader("/other");
-          }}
-        >
-          Other
+          <span className={"logoColor"}>T</span>he Fun Zone
         </h1>
       </Col>
       <hr style={{ color: "grey", borderWidth: "2px", margin: 0 }}></hr>

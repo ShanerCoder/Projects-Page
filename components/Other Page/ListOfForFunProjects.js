@@ -7,12 +7,12 @@ function ListOfForFunProjects(props) {
   }
 
   const projects = [
-    {
-      expanded_title: "Project Clicker",
-      title: "PC",
-      description: "Clicker game",
-      ref: "PC",
-    },
+    // {
+    //   expanded_title: "Project Clicker",
+    //   title: "PC",
+    //   description: "Clicker game",
+    //   ref: "PC",
+    // },
     {
       expanded_title: "Number Guessing",
       title: "NG",
@@ -26,7 +26,7 @@ function ListOfForFunProjects(props) {
       ref: "HM",
     },
     { expanded_title: "Shut the Box", title: "STB", description: "Roll the dice and shut the box!", ref: "STB" },
-    { expanded_title: "WIP", title: "WIP", description: "WIP", ref: "N/A3" },
+    // { expanded_title: "WIP", title: "WIP", description: "WIP", ref: "N/A3" },
   ];
   return (
     <ul className={classes.funList}>

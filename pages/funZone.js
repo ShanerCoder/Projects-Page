@@ -5,8 +5,8 @@ export default function Other() {
   return (
     <>
       <Head>
-        <title>Shane's Other Projects</title>
-        <meta name="description" content="Other projects Shane has worked on" />
+        <title>The Fun Zone</title>
+        <meta name="description" content="Fun Zone" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

@@ -11,6 +11,10 @@ a {
   text-decoration: none;
 }
 
+.logoColor {
+  color: blue;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -40,6 +44,32 @@ button {
 button:hover {
   transform: scale(1.1);
   filter:opacity(0.8);
+}
+
+.container {
+  padding: 0 2rem;
+}
+
+.title a {
+  color: #e33f3f;
+  text-decoration: none;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+}
+
+.logo {
+  height: 1.5em;
+  margin-left: 0.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
