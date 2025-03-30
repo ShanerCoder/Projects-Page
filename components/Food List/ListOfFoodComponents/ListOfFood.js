@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import FoodColumns from "./FoodColumns";
 import styles from "./ListOfFood.module.css";
+import { Row, Col } from "react-bootstrap";
 
 function ListOfFood({ foodListData }) {
   const [filterByDate, setFilterByDate] = useState("All Dates");
@@ -70,39 +71,55 @@ function ListOfFood({ foodListData }) {
     <>
       <h1 className={styles.header}>List of foods I have eaten:</h1>
       <p className={styles.note}>Note: List not final I hope</p>
-      <div>
-        <input
-          className={styles.searchInput}
-          type="text"
-          placeholder="Search for food or brand..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-
-        <select
-          value={filterByDate}
-          className={styles.filterInput}
-          onChange={(e) => setFilterByDate(e.target.value)}
+      <Row>
+        <Col
+          xs={{ span: 4 }}
+          sm={{ span: 4 }}
+          className={styles.foodListHeaderColumn}
         >
-          {uniqueDates.map((date) => (
-            <option key={date} value={date}>
-              {date}
-            </option>
-          ))}
-        </select>
-
-        <select
-          value={filterByBrand}
-          className={styles.filterInput}
-          onChange={(e) => setFilterByBrand(e.target.value)}
+          <input
+            className={styles.filterInput}
+            type="text"
+            placeholder="Search for food or brand..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </Col>
+        <Col
+          xs={{ span: 4 }}
+          sm={{ span: 4 }}
+          className={styles.foodListHeaderColumn}
         >
-          {uniqueBrands.map((brand) => (
-            <option key={brand} value={brand}>
-              {brand}
-            </option>
-          ))}
-        </select>
-      </div>
+          <select
+            value={filterByDate}
+            className={styles.filterInput}
+            onChange={(e) => setFilterByDate(e.target.value)}
+          >
+            {uniqueDates.map((date) => (
+              <option key={date} value={date}>
+                {date}
+              </option>
+            ))}
+          </select>
+        </Col>
+        <Col
+          xs={{ span: 4 }}
+          sm={{ span: 4 }}
+          className={styles.foodListHeaderColumn}
+        >
+          <select
+            value={filterByBrand}
+            className={styles.filterInput}
+            onChange={(e) => setFilterByBrand(e.target.value)}
+          >
+            {uniqueBrands.map((brand) => (
+              <option key={brand} value={brand}>
+                {brand}
+              </option>
+            ))}
+          </select>
+        </Col>
+      </Row>
 
       <FoodColumns foodListData={filteredFoodList} />
     </>
