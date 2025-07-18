@@ -1,15 +1,15 @@
-import { useState, useMemo } from "react";
-import FoodColumns from "./FoodColumns";
-import styles from "./ListOfFood.module.css";
-import { Row, Col } from "react-bootstrap";
+import { useState, useMemo } from 'react';
+import FoodColumns from './FoodColumns';
+import styles from './ListOfFood.module.css';
+import { Row, Col } from 'react-bootstrap';
 
 function ListOfFood({ foodListData }) {
-  const [filterByDate, setFilterByDate] = useState("All Dates");
-  const [filterByBrand, setFilterByBrand] = useState("All Brands");
-  const [searchTerm, setSearchTerm] = useState("");
+  const [filterByDate, setFilterByDate] = useState('All Years');
+  const [filterByBrand, setFilterByBrand] = useState('All Brands');
+  const [searchTerm, setSearchTerm] = useState('');
 
-  const uniqueDates = useMemo(() => {
-    const dates = new Set(foodListData.map((food) => food.dateFirstEaten));
+  const uniqueYears = useMemo(() => {
+    const dates = new Set(foodListData.map((food) => food.yearFirstEaten));
 
     const sortedDates = [...dates].sort((a, b) => {
       const numA = parseInt(a, 10);
@@ -21,16 +21,16 @@ function ListOfFood({ foodListData }) {
       return a.localeCompare(b);
     });
 
-    return ["All Dates", ...sortedDates];
+    return ['All Years', ...sortedDates];
   }, [foodListData]);
 
   const uniqueBrands = useMemo(() => {
     const brands = new Set(
       foodListData
         .map((food) => food.brand)
-        .filter((brand) => brand && brand.trim() !== "")
+        .filter((brand) => brand && brand.trim() !== '')
     );
-    return ["All Brands", ...brands];
+    return ['All Brands', ...brands];
   }, [foodListData]);
 
   const filteredFoodList = useMemo(() => {
@@ -42,28 +42,29 @@ function ListOfFood({ foodListData }) {
         (food.brand && food.brand.toLowerCase().includes(lowerSearch));
 
       const matchesDate =
-        filterByDate === "All Dates" || food.dateFirstEaten === filterByDate;
+        filterByDate === 'All Years' || food.yearFirstEaten === filterByDate;
       const matchesBrand =
-        filterByBrand === "All Brands" || food.brand === filterByBrand;
+        filterByBrand === 'All Brands' || food.brand === filterByBrand;
 
       return matchesSearch && matchesDate && matchesBrand;
     });
 
     return filtered.sort((a, b) => {
-      const numA = parseInt(a.dateFirstEaten, 10);
-      const numB = parseInt(b.dateFirstEaten, 10);
+      const numA = parseInt(a.yearFirstEaten, 10);
+      const numB = parseInt(b.yearFirstEaten, 10);
 
       if (!isNaN(numA) && !isNaN(numB)) {
-        if (numB !== numA) return numB - numA;
-      } else if (!isNaN(numA)) {
-        return -1;
-      } else if (!isNaN(numB)) {
-        return 1;
+        if (numA !== numB) return numB - numA;
+        if ((a.monthFirstEaten || 0) !== (b.monthFirstEaten || 0)) {
+          return (b.monthFirstEaten || 0) - (a.monthFirstEaten || 0);
+        }
+        return (b.dateFirstEaten || 0) - (a.dateFirstEaten || 0);
       }
 
-      const ratingA = a.rating ?? 0;
-      const ratingB = b.rating ?? 0;
-      return ratingB - ratingA;
+      if (!isNaN(numA)) return -1;
+      if (!isNaN(numB)) return 1;
+
+      return a.yearFirstEaten.localeCompare(b.yearFirstEaten);
     });
   }, [foodListData, searchTerm, filterByDate, filterByBrand]);
 
@@ -79,8 +80,8 @@ function ListOfFood({ foodListData }) {
         >
           <input
             className={styles.filterInput}
-            type="text"
-            placeholder="Search for food or brand..."
+            type='text'
+            placeholder='Search for food or brand...'
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -95,7 +96,7 @@ function ListOfFood({ foodListData }) {
             className={styles.filterInput}
             onChange={(e) => setFilterByDate(e.target.value)}
           >
-            {uniqueDates.map((date) => (
+            {uniqueYears.map((date) => (
               <option key={date} value={date}>
                 {date}
               </option>

@@ -1,148 +1,163 @@
 [
-    {
-        "name": "Breaded Chicken",
-        "dateFirstEaten": "Childhood",
-        "rating": 10,
-        "additionalNotes": "peak peak peak"
-    },
-    {
-        "name": "Chips / Fries",
-        "dateFirstEaten": "Childhood",
-        "rating": 9,
-        "additionalNotes": "also peak but less peak than chicken"
-    },
-    {
-        "name": "Breaded Cod",
-        "dateFirstEaten": "Childhood",
-        "rating": 8,
-        "additionalNotes": "great but overpriced in restaurants"
-    },
-    {
-        "name": "Sausages",
-        "dateFirstEaten": "2018",
-        "rating": "7-9",
-        "additionalNotes": "when your sausages are cooking - also low fat sausages don't hit as good"
-    },
-    {
-        "name": "Toast",
-        "dateFirstEaten": "2018",
-        "rating": 7,
-        "additionalNotes": "Butter / Spread on toast is overrated"
-    },
-    {
-        "name": "Scrambled Eggs",
-        "dateFirstEaten": "2018",
-        "rating": "7",
-        "additionalNotes": "Shoutout to the guy at the gym who told me to eat them"
-    },
-    {
-        "name": "Poached Eggs",
-        "dateFirstEaten": "2020",
-        "rating": "6-8",
-        "additionalNotes": "It really can be great or just fine"
-    },
-    {
-        "name": "Omelette",
-        "dateFirstEaten": "2022",
-        "rating": "9",
-        "additionalNotes": "I love omelettes"
-    },
-    {
-        "name": "Fried Eggs",
-        "dateFirstEaten": "2022",
-        "rating": "7",
-        "additionalNotes": "Nice but feels too unhealthy"
-    },
-    {
-        "name": "Bacon",
-        "dateFirstEaten": "2022",
-        "rating": "6",
-        "additionalNotes": "Can hit good with salt, but normally not my favourite part of a morning fry"
-    },
-    {
-        "name": "Chicken Nuggets",
-        "dateFirstEaten": "Childhood",
-        "rating": 9,
-        "additionalNotes": "mmm nuggies"
-    },
-    {
-        "name": "Fish Fingers",
-        "dateFirstEaten": "Childhood",
-        "rating": "5-7",
-        "additionalNotes": "Wide range of quality, but generally good"
-    },
-    {
-        "name": "Apple",
-        "dateFirstEaten": "2017",
-        "rating": "4-7",
-        "additionalNotes": "Can be very nice but usually it's ok"
-    },
-    {
-        "name": "Orange",
-        "dateFirstEaten": "2018",
-        "rating": "3-7",
-        "additionalNotes": "oranj"
-    },
-    {
-        "name": "Banana",
-        "dateFirstEaten": "2020",
-        "rating": "2",
-        "additionalNotes": "minions - they taste really bad for me"
-    },
-    {
-        "name": "Original Recipe Chicken",
-        "dateFirstEaten": "Childhood",
-        "rating": 10,
-        "additionalNotes": "peak peak peak",
-        "brand": "KFC"
-    },
-    {
-        "name": "Hot Wings",
-        "dateFirstEaten": "2020",
-        "rating": 7,
-        "additionalNotes": "white man no spice tolerance",
-        "brand": "KFC"
-    },
-    {
-        "name": "Chicken Popcorn",
-        "dateFirstEaten": "2022",
-        "rating": 8,
-        "additionalNotes": "pretty nice but too little serving size",
-        "brand": "KFC"
-    },
-    {
-        "name": "Mini Fillets",
-        "dateFirstEaten": "2022",
-        "rating": 10,
-        "additionalNotes": "these are so good",
-        "brand": "KFC"
-    },
-    {
-        "name": "Chicken McNuggets",
-        "dateFirstEaten": "Childhood",
-        "rating": 9,
-        "additionalNotes": "mmm mcnuggies",
-        "brand": "McDonalds"
-    },
-    {
-        "name": "Fries",
-        "dateFirstEaten": "Childhood",
-        "rating": "9",
-        "additionalNotes": "These are some good fries",
-        "brand": "McDonalds"
-    },
-    {
-        "name": "Chicken McBites",
-        "dateFirstEaten": "2012",
-        "rating": 9,
-        "additionalNotes": "bring them back - proof they existed: https://mcdonalds.co.nz/menu/10pk-chicken-mcbites",
-        "brand": "McDonalds"
-    },
-    {
-        "name": "Chicken Selects",
-        "dateFirstEaten": "2023",
-        "rating": 8,
-        "additionalNotes": "so so so expensive but tasty",
-        "brand": "McDonalds"
-    }
+  {
+    "name": "Breaded Chicken",
+    "yearFirstEaten": "Childhood",
+    "rating": 10,
+    "additionalNotes": "peak peak peak"
+  },
+  {
+    "name": "Chips / Fries",
+    "yearFirstEaten": "Childhood",
+    "rating": 9,
+    "additionalNotes": "also peak but less peak than chicken"
+  },
+  {
+    "name": "Breaded Cod",
+    "yearFirstEaten": "Childhood",
+    "rating": 8,
+    "additionalNotes": "great but overpriced in restaurants"
+  },
+  {
+    "name": "Sausages",
+    "yearFirstEaten": "2018",
+    "rating": "7-9",
+    "additionalNotes": "when your sausages are cooking - also low fat sausages don't hit as good"
+  },
+  {
+    "name": "Toast",
+    "yearFirstEaten": "2018",
+    "rating": 7,
+    "additionalNotes": "Butter / Spread on toast is overrated"
+  },
+  {
+    "name": "Scrambled Eggs",
+    "yearFirstEaten": "2018",
+    "rating": "7",
+    "additionalNotes": "Shoutout to the guy at the gym who told me to eat them"
+  },
+  {
+    "name": "Poached Eggs",
+    "yearFirstEaten": "2020",
+    "rating": "6-8",
+    "additionalNotes": "It really can be great or just fine"
+  },
+  {
+    "name": "Omelette",
+    "yearFirstEaten": "2022",
+    "rating": "9",
+    "additionalNotes": "I love omelettes"
+  },
+  {
+    "name": "Fried Eggs",
+    "yearFirstEaten": "2022",
+    "rating": "7",
+    "additionalNotes": "Nice but feels too unhealthy"
+  },
+  {
+    "name": "Bacon",
+    "yearFirstEaten": "2022",
+    "rating": "6",
+    "additionalNotes": "Can hit good with salt, but normally not my favourite part of a morning fry"
+  },
+  {
+    "name": "Chicken Nuggets",
+    "yearFirstEaten": "Childhood",
+    "rating": 9,
+    "additionalNotes": "mmm nuggies"
+  },
+  {
+    "name": "Fish Fingers",
+    "yearFirstEaten": "Childhood",
+    "rating": "5-7",
+    "additionalNotes": "Wide range of quality, but generally good"
+  },
+  {
+    "name": "Apple",
+    "yearFirstEaten": "2017",
+    "rating": "4-7",
+    "additionalNotes": "Can be very nice but usually it's ok"
+  },
+  {
+    "name": "Orange",
+    "yearFirstEaten": "2018",
+    "rating": "3-7",
+    "additionalNotes": "oranj"
+  },
+  {
+    "name": "Banana",
+    "yearFirstEaten": "2020",
+    "rating": "2",
+    "additionalNotes": "minions - they taste really bad for me"
+  },
+  {
+    "name": "Original Recipe Chicken",
+    "yearFirstEaten": "Childhood",
+    "rating": 10,
+    "additionalNotes": "peak peak peak",
+    "brand": "KFC"
+  },
+  {
+    "name": "Hot Wings",
+    "yearFirstEaten": "2020",
+    "rating": 6,
+    "additionalNotes": "white man no spice tolerance",
+    "brand": "KFC"
+  },
+  {
+    "name": "Popcorn Chicken",
+    "yearFirstEaten": "2022",
+    "rating": 8,
+    "additionalNotes": "pretty nice but too little serving size",
+    "brand": "KFC"
+  },
+  {
+    "name": "Mini Fillets",
+    "yearFirstEaten": "2022",
+    "rating": 10,
+    "additionalNotes": "these are so good",
+    "brand": "KFC"
+  },
+  {
+    "name": "Chicken McNuggets",
+    "yearFirstEaten": "Childhood",
+    "rating": 9,
+    "additionalNotes": "mmm mcnuggies",
+    "brand": "McDonalds"
+  },
+  {
+    "name": "Fries",
+    "yearFirstEaten": "Childhood",
+    "rating": "10",
+    "additionalNotes": "These are some good fries",
+    "brand": "McDonalds"
+  },
+  {
+    "name": "Chicken McBites",
+    "yearFirstEaten": "2012",
+    "rating": 9,
+    "additionalNotes": "bring them back - proof they existed: https://mcdonalds.co.nz/menu/10pk-chicken-mcbites",
+    "brand": "McDonalds"
+  },
+  {
+    "name": "Chicken Selects",
+    "yearFirstEaten": "2023",
+    "rating": 8,
+    "additionalNotes": "so so so expensive but tasty",
+    "brand": "McDonalds"
+  },
+  {
+    "name": "Fried Egg Bagel",
+    "yearFirstEaten": "2025",
+    "monthFirstEaten": 4,
+    "dateFirstEaten": 1,
+    "rating": 7,
+    "additionalNotes": "I knew I liked eggs so thought this was a safe option, was quite happy although I more enjoyed the egg part than the bagel part",
+    "brand": "BBagel"
+  },
+  {
+    "name": "Sushi",
+    "yearFirstEaten": "2020",
+    "rating": 1,
+    "additionalNotes": "i cannot 💀"
+  }
 ]
