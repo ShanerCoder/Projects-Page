@@ -70,7 +70,7 @@ function ListOfFood({ foodListData }) {
 
   return (
     <>
-      <h1 className={styles.header}>List of foods I have eaten:</h1>
+      <h2 className={styles.header}>List of foods I have eaten:</h2>
       <p className={styles.note}>Note: List not final I hope</p>
       <Row>
         <Col

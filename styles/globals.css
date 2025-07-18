@@ -11,8 +11,33 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+h3 {
+  font-size: 2.0rem;
+  margin: 0;
+}
+
+h4 {
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+p {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
 .logoColor {
-  color: blue;
+  color: lime;
 }
 
 * {
@@ -84,7 +109,7 @@ button:hover {
   }
 
   a, .linkLabel {
-    color: #ffffff;
+    color: #000;
     font-weight: bold;
     text-decoration: none;
     transition: color 0.4s ease-in-out;
@@ -92,10 +117,6 @@ button:hover {
   }
 
   html {
-    color-scheme: dark;
-  }
-  body {
-    color: #D42B99;
-    background: black;
+    color-scheme: light;
   }
 }
